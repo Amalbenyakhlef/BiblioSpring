@@ -13,13 +13,17 @@ public class sinistre {
     private Double degats;
     private int idConstat;
     private String type;
+    
+    
     public sinistre(Date dateDeclaration,Double degats,int idConstat,String type){
         this.dateDeclaration=dateDeclaration;
         this.degats=degats;
         this.idConstat=idConstat;
         this.type=type;
     }
+    
+    
     public void remplir(){
-        
+        // a faire 
     }
 }

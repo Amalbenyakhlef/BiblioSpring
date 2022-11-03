@@ -4,12 +4,12 @@
  */
 package models;
 
-
 //import java.io.ObjectInputFilter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.UUID;
 
 /**
  *
@@ -17,21 +17,29 @@ import java.util.Scanner;
  */
 
 public abstract class Contrat {
+    private String IdContrat;
     private Date dateCreation;
     private Date dateDebut;
     private Date dateFin ;
-    private Double prix;
+    private Double prix;          // not yet ***************** 
     private String typeContrat;
     
     
     public Contrat (Date dc, Date db,Date df, Double prix,String type){  //ObjectInputFilter.Status st
+        IdContrat= UUID.randomUUID().toString();  //a verifier dans le main ??????
         dateCreation=dc;
         dateDebut=db;
         dateFin=df;
         this.prix=prix;
         typeContrat=type;
+        
     }
     
+    
+     public String toString(){
+        return "le contrat d'id: "+IdContrat+" est crée dans "+this.dateCreation+" à partir de "+this.dateDebut+" et ce termine le "+this.dateFin +" et le type de contrat est "+ this.typeContrat;
+    }
+     
     public void saisirContrat() throws ParseException{
         
         Scanner sc = new Scanner(System.in);
@@ -41,7 +49,7 @@ public abstract class Contrat {
             if(strC.matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")){
                  SimpleDateFormat f = new SimpleDateFormat("MM-dd-yyyy");
             String sDate = null;
-            Date dateCreation = f.parse(sDate);
+            Date dateCreation = f.parse(strC);
         }
             else {
                  System.out.println("Erreur format");
@@ -54,21 +62,21 @@ public abstract class Contrat {
             if(strD.matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")){
                  SimpleDateFormat f = new SimpleDateFormat("MM-dd-yyyy");
             String sDate = null;
-            Date dateDebut= f.parse(sDate);
+            Date dateDebut= f.parse(strD);
         }
             else {
                  System.out.println("Erreur format");
                 }
             
-        System.out.println("Saisissez le date de debut de Contrat (JJ/MM/AAAA) :");
+        System.out.println("Saisissez le date de Fin de Contrat (JJ/MM/AAAA) :");
                 String strF = sc.nextLine();
             if(strF.matches("[0-9]{2}/[0-9]{2}/[0-9]{4}")){
                  SimpleDateFormat f = new SimpleDateFormat("MM-dd-yyyy");
             String sDate = null;
-            Date dateFin = f.parse(sDate);
+            Date dateFin = f.parse(strF);
         }
             else {
-                 System.out.println("Erreur format");
+                 System.out.println("Success");
                 }
             
        
@@ -95,6 +103,7 @@ public abstract class Contrat {
                 typeContrat="habitation";
             break;
             }
+            
 }
             else {
         switch(numT) {
@@ -110,10 +119,11 @@ public abstract class Contrat {
         }
                     
         }
-        
+       
            
     }
     
+    public String getId(){return IdContrat;}
     public Date getDateCreation(){return dateCreation;}
     public Date getDateDebut(){return dateDebut;}
     public Date getDateFin(){ return dateFin;}
