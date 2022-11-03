@@ -13,6 +13,8 @@ import java.util.Date;
 public class admin extends personne{
     private int nbSinistres;
     private int nbContratsValides;
+    
+    
     public admin(String nom,String prenom,String password,String email,String tel,Date datenaiss,int nbSinistres,int nbContratsValides){
         super( nom, prenom, password, email,tel,datenaiss);
         this.nbContratsValides=nbContratsValides;

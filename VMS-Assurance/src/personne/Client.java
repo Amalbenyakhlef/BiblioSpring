@@ -5,6 +5,8 @@
 package personne;
 import Personne.personne;
 import java.util.Date;
+import java.util.ArrayList;
+import models.Contrat;
 
 /**
  *
@@ -13,12 +15,15 @@ import java.util.Date;
 public class Client extends personne {
     private int idClient;
     private int nbSinistresFaits;
+    private ArrayList<Contrat> ListContrat;
+    
+    
     public Client(String nom,String prenom,String password,String email,String tel,Date datenaiss,int idClient,int nbSinistresFaits){
         super( nom, prenom, password, email,tel, datenaiss);
         this.idClient=idClient;
         this.nbSinistresFaits=nbSinistresFaits;
+        ListContrat= new ArrayList();
     }
-    public void saisirContrat(){
-        
-    }
+    
+    
 }

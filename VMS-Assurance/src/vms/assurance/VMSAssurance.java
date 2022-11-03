@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML.java to edit this template
  */
 package vms.assurance;
-import java.io.IOException;
+//import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -24,6 +24,14 @@ public class VMSAssurance extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+        
+        
+        
+        
+        
+        
+        
+        
     }
     @Override
     public void start(Stage stage) throws Exception {
