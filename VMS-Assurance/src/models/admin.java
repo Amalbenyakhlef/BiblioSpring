@@ -12,14 +12,29 @@ import java.util.Date;
 public class admin extends personne{
     private int nbSinistres;
     private int nbContratsValides;
-    
-    
-    public admin(String nom,String prenom,String password,String email,String tel,Date datenaiss,int nbSinistres,int nbContratsValides){
-        super( nom, prenom, password, email,tel,datenaiss);
-        this.nbContratsValides=nbContratsValides;
-        this.nbSinistres=nbSinistres;
+
+    public admin(int nbSinistres, int nbContratsValides, String nom, String prenom, String password, String email, String tel, Date datenaiss) {
+        super(nom, prenom, password, email, tel, datenaiss);
+        this.nbSinistres = nbSinistres;
+        this.nbContratsValides = nbContratsValides;
     }
-    public void validerContrat(){
-        // parametre contrat
+
+    public int getNbSinistres() {
+        return nbSinistres;
     }
+
+    public int getNbContratsValides() {
+        return nbContratsValides;
+    }
+
+    public void setNbSinistres(int nbSinistres) {
+        this.nbSinistres = nbSinistres;
+    }
+
+    public void setNbContratsValides(int nbContratsValides) {
+        this.nbContratsValides = nbContratsValides;
+    }
+    
+   
+  
 }

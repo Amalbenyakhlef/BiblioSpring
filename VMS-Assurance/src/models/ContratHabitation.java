@@ -14,14 +14,16 @@ public class ContratHabitation extends Contrat {
     private int niveauDeGarantie ;
     
     
-    public ContratHabitation(Date dc, Date db, Date df, Double prix, String type,int niveauDeGarantie) {
-        super(dc, db, df, prix, type);
+    public ContratHabitation(Date dc, Date db, Date df, Double prix,int niveauDeGarantie) {
+        super(dc, db, df, prix);
         this.niveauDeGarantie=niveauDeGarantie;
         
     }
     
     public String toString (){
-        return super.toString()+" et le niveau de Garantie "+niveauDeGarantie;
+        return super.toString()+" et le niveau de Garantie de Contrat habitation est  "+niveauDeGarantie;
     }
     
+    
+    public int getniveauDeGarantie (){return  niveauDeGarantie;}
 }

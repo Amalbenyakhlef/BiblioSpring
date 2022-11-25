@@ -7,13 +7,26 @@ package Controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import java.net.URL;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import java.sql.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javax.swing.JOptionPane;
+
+
 
 /**
  * FXML Controller class
  *
  * @author admin
  */
-public class LoginAdmController implements Initializable {
+public class LoginControllerUser implements Initializable {
 
     /**
      * Initializes the controller class.

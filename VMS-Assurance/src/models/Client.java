@@ -4,11 +4,10 @@
  */
 package models;
 import java.util.Date;
-import java.util.ArrayList;
-import java.util.stream.Stream;
-import models.Contrat;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+//import java.util.ArrayList;
+//import java.util.stream.*;
+//import models.Contrat;
+
 
 /**
  *
@@ -17,7 +16,7 @@ import java.util.stream.IntStream;
 public class Client extends personne {
     private int idClient;
     private int nbSinistresFaits;
-    private ArrayList<Contrat> ListContrat;
+    //private ArrayList<Contrat> ListContrat;
     
     
     
@@ -25,10 +24,33 @@ public class Client extends personne {
         super( nom, prenom, password, email,tel, datenaiss);
         this.idClient=idClient;
         this.nbSinistresFaits=nbSinistresFaits;
-        ListContrat= new ArrayList();
+        //ListContrat= new ArrayList();
+    }
+
+    public int getIdClient() {
+        return idClient;
+    }
+
+    public int getNbSinistresFaits() {
+        return nbSinistresFaits;
+    }
+
+    public void setIdClient(int idClient) {
+        this.idClient = idClient;
+    }
+
+    public void setNbSinistresFaits(int nbSinistresFaits) {
+        this.nbSinistresFaits = nbSinistresFaits;
     }
     
-    public void ajouterContrat (Contrat C){
+    @Override
+    public String toString (){
+        
+        return ( super.toString()+"==> le Client de l'id: "+idClient+" a fait "+nbSinistresFaits/*+" Sinistres et qui admet cette Liste de Contrat avec l'assurance "*/);
+        
+    }
+    
+    /*public void ajouterContrat (Contrat C){
         this.ListContrat.add(C);
     }
     
@@ -45,10 +67,28 @@ public class Client extends personne {
     public void afficherListContrat (){
         /*Stream <Contrat> str = ListContrat.stream();
         Stream <Contrat> str1 = str.filter(line->line>0);
-        str1.forEach(System.out::printLn);*/
+        str1.forEach(System.out::printLn);
 
-        //ListContrat.stream().filter(e->e>0).forEach(System.out::println);
         
+        Stream List = Stream.of(ListContrat);
+        //System.out.println(List.collect(Collectors.toList()));
+        
+        // Print the stream
+        List.forEach(s -> System.out.println(s));
+  
+        // Since the stream has been already consumed
+        // this will throw exception
+        try {
+  
+            // Print the stream
+            List.forEach(s -> System.out.println(s));
+        }
+  
+        catch (Exception e) {
+  
+            System.out.println("\nException: " + e);
+        }
     }
+    */
     
 }
