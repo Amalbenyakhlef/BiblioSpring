@@ -29,7 +29,7 @@ import javax.swing.JOptionPane;
 public class LoginControllerUser implements Initializable {
 
     /**
-     * Initializes the controller class.
+     * Initializes the controller class.helloefefzefzef
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
